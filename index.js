@@ -10,7 +10,7 @@ btn.addEventListener('click', (oldNum, newNum, result) => {
     newNum = +resultNum.value;
     let msg = true;
     p.textContent = +inputNum.value;
-    for (i=0;i<10;i++) {
+    for (;;) {
        exponent ++ 
        result = newNum * oldNum;
        newNum = result;
