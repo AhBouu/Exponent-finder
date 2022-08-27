@@ -1,9 +1,9 @@
 {
     "name" : "Exponent Finder",
     "short_name": "Exponent Finder",
-    "start_url": "/Exponent-Finder/",
+    "start_url": "/Exponent-finder/",
     "orientation": "portrait",
-    "scope": "./",
+    "scope": "/",
     "background_color": "#000000",
     "theme_color": "#000000",
     "display": "standalone",
