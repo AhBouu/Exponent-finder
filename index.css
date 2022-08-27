@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+}
+
+.main {
+    display: inline-block;
+    box-shadow: 0 0 1px 1px transparent;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+.numInput {
+    margin-bottom: 4px;
+    border: 2.8px solid #3e7db3;
+    background-color: #0c2038;
+    font-family: monospace;
+    color: white;
+    margin-left: 20%;
+}
+
+.numResult {
+    margin-bottom: 4px;
+    border: 2.8px solid #3e7db3;
+    background-color: #0c2038;
+    font-family: monospace;
+    color: white;
+    margin-left: 20%;
+}
+
+.numInput:focus, .numResult:focus {
+   outline: none; 
+   border: 2.8px solid #55b3df;
+}
+
+.result {
+    border: 2.9px solid #3e7db3;
+    background-color: #0c2038;
+    color: #91c5e3;
+    font-family: cursive;
+    margin-top: 8px;
+    margin-left: 35%;
+}
+
+.result:active {
+    transform: translateY(2px);
+}
+
+.resultP {
+    font-family: monospace;
+    color: white;
+    font-size: 2.5vw;
+    margin-left: 33%;
+}
+
+.exclamir {
+    font-family: monospace;
+    color: white;
+    font-size: 2.5vw;
+    margin-left: 10%;
+}
+
+.clearResult {
+    border: 2.9px solid #3e7db3;
+    background-color: #0c2038;
+    color: #91c5e3;
+    font-family: cursive;
+    margin-top: 8px;
+    margin-left: 37%;
+
+}
+
+.clearResult:active {
+    transform: translateY(2px);
+}
+

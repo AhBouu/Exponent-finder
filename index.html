@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Exponent Finder</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <script>
+        if ('serviceWorker' in navigator) {
+  // Register a service worker hosted at the root of the
+  // site using the default scope.
+  navigator.serviceWorker.register('./sw.js').then((registration) => {
+    console.log('Service worker registration succeeded:', registration);
+  }, /*catch*/ (error) => {
+    console.error(`Service worker registration failed: ${error}`);
+  });
+} else {
+  console.error('Service workers are not supported.');
+}
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="numberDiv">
+            <input type="text" class="numInput" placeholder="8">
+            <input type="text" class="numResult" placeholder="2 // should be 2**3">
+        </div>
+    <div class="btnDiv">
+        <button class="result">Answer</button>
+        <button class="clearResult">Clear</button>
+    </div>    
+    <div class="resultDiv">    
+        <p class="resultP"></p>
+    </div>
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
