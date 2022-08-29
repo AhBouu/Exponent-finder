@@ -1,11 +1,26 @@
 let inputNum = document.querySelector('.numInput');
 let resultNum = document.querySelector('.numResult');
-let btn = document.querySelector('.result');
+let btn = document.querySelectorAll('.result');
 let resultText = document.querySelector('.resultDiv');
 let btn2 = document.querySelector('.clearResult');
 let exponent = 1;
 let p = document.querySelector('.resultP');
-btn.addEventListener('click', (oldNum, newNum, result) => {
+btn.forEach(function(btns) {
+    btns.addEventListener('click', (ID) => {
+     let idSet = ID.currentTarget.dataset.id
+     
+        if (idSet == 1) {
+            Result1()
+        }
+        else if (idSet == 2) {
+            Result2()
+        }
+    })
+
+}) 
+
+
+ Result1  = (oldNum, newNum, result) => {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
     let msg = true;
@@ -15,21 +30,16 @@ btn.addEventListener('click', (oldNum, newNum, result) => {
        result = newNum * oldNum;
        newNum = result;
        
-       if (+resultNum.value === 1) {
-        alert('Dont Enter Number 1')
-        
-        break
-        
-    };
+       if (+resultNum.value === 1 ) {
+        alert('Dont enter 1 or 0')
+        break;
+     }
 
        if (result> +inputNum.value) {
         if (msg) {
             resultText.innerHTML += `<p class='exclamir'> This is the only possible answer!! </p>` ;
         };
 
-       
-
-        
         break;
     };
        resultText.innerHTML += `
@@ -41,14 +51,56 @@ btn.addEventListener('click', (oldNum, newNum, result) => {
         msg = false
        }
     
+    };
+    clear()
+};
+
+Result2 = (oldNum, newNum, result, Confirm) => {
+   
+   Confirm = confirm('Might Freeze')
+   if (Confirm) {
+    oldNum = +resultNum.value;
+    newNum = +resultNum.value;
+    let msg = true;
+    p.textContent = +inputNum.value;
+    
+    for (;;) {
+       exponent ++ 
+       result = newNum * oldNum;
+       newNum = result;
+       
+       if (+resultNum.value === 1 ) {
+        alert('Dont enter 1 or 0')
+        break;
+     }
+
+       if (result> +inputNum.value) {
+        exponent = 1
+        
+        oldNum++ 
+        result = oldNum
+        newNum = oldNum
+        console.log(result)
+        
+    };
+       resultText.innerHTML += `
+         <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
+       `;
+
+       if (result === +inputNum.value) {
+        resultText.innerHTML += `<p class='exclamir'> This is the answer!! </p>` ;
+        break;
+       }
     
     };
     clear()
-});
+}
+};
+    
+
 
 clear = () => {
     result = 0;
-    inputNum.value = 0;
     resultNum.value = 0;
     oldNum = 0;
     newNum = 0;

@@ -24,19 +24,22 @@
     </script>
 </head>
 <body>
+  <div class="position">
     <div class="main">
         <div class="numberDiv">
-            <input type="text" class="numInput" placeholder="8">
-            <input type="text" class="numResult" placeholder="2 // should be 2^3">
+            <input type="number" class="numInput" placeholder="8">
+            <input type="number" class="numResult" placeholder="2 // should be 2^3">
         </div>
     <div class="btnDiv">
-        <button class="result">Answer</button>
+        <button class="result" data-id="1">Answer</button>
+        <button class="result" data-id="2">All Result</button>
         <button class="clearResult">Clear</button>
     </div>    
     <div class="resultDiv">    
         <p class="resultP"></p>
     </div>
     </div>
+  </div>
     
 
     <script src="index.js"></script>
