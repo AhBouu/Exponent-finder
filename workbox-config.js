@@ -10,4 +10,3 @@ module.exports = {
 	]
 };
 
-const ver = 1

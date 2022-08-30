@@ -59,11 +59,12 @@ btn.forEach(function(btns) {
 
 Result2 = (oldNum, newNum, result, Confirm) => {
    
-   Confirm = confirm('Might Freeze And Only Show Result That Can Go For At Least An Exponen Of 2')
+   Confirm = confirm('Might Freeze So Wait A While And Only Show Result That Can Go Up For At Least An Exponent Of 2')
    if (Confirm) {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
     let msg = false;
+    let msg2 = true;
     p.textContent = +inputNum.value;
     
     for (;;) {
@@ -99,6 +100,13 @@ Result2 = (oldNum, newNum, result, Confirm) => {
     
     else if (oldNum * oldNum> +inputNum.value) {
         msg = true;
+        if (msg2) {
+        resultText.innerHTML += `
+         <p class='resultP'> ${oldNum}^${1}  = ${oldNum}</p>
+       `;
+        msg2 = false; 
+    }
+
         continue;
        };
        
