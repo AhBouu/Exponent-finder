@@ -9,21 +9,23 @@ body {
 }
 
 .numInput {
-    margin-bottom: 4px;
     border: 2.8px solid #3e7db3;
     background-color: #0c2038;
     font-family: monospace;
     color: white;
-    margin-left: 20%;
+    display: block;
+    margin: auto;
+    margin-bottom: 5px
 }
 
 .numResult {
-    margin-bottom: 4px;
     border: 2.8px solid #3e7db3;
     background-color: #0c2038;
     font-family: monospace;
     color: white;
-    margin-left: 20%;
+    display: block;
+    margin: auto;
+    margin-bottom: 5px
 }
 
 .numInput:focus, .numResult:focus {
@@ -36,8 +38,9 @@ body {
     background-color: #0c2038;
     color: #91c5e3;
     font-family: cursive;
-    margin-top: 8px;
-    margin-left: 35%;
+    margin: auto;
+    display: block;
+    margin-bottom: 6px;
 }
 
 .result:active {
@@ -48,14 +51,14 @@ body {
     font-family: monospace;
     color: white;
     font-size: 2.5vw;
-    margin-left: 33%;
+    text-align: center;
 }
 
 .exclamir {
     font-family: monospace;
     color: white;
     font-size: 2.5vw;
-    margin-left: 10%;
+    text-align: center;
 }
 
 .clearResult {
@@ -63,9 +66,8 @@ body {
     background-color: #0c2038;
     color: #91c5e3;
     font-family: cursive;
-    margin-top: 8px;
-    margin-left: 37%;
-
+    margin: auto;
+    display: block;
 }
 
 .clearResult:active {

@@ -9,3 +9,5 @@ module.exports = {
 		/^fbclid$/
 	]
 };
+
+const ver = 1

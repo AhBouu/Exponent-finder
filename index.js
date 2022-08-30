@@ -35,6 +35,11 @@ btn.forEach(function(btns) {
         break;
      }
 
+       
+       resultText.innerHTML += `
+         <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
+       `;
+
        if (result> +inputNum.value) {
         if (msg) {
             resultText.innerHTML += `<p class='exclamir'> This is the only possible answer!! </p>` ;
@@ -42,9 +47,6 @@ btn.forEach(function(btns) {
 
         break;
     };
-       resultText.innerHTML += `
-         <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
-       `;
 
        if (result === +inputNum.value) {
         resultText.innerHTML += `<p class='exclamir'> This is the answer!! </p>` ;
@@ -57,11 +59,11 @@ btn.forEach(function(btns) {
 
 Result2 = (oldNum, newNum, result, Confirm) => {
    
-   Confirm = confirm('Might Freeze')
+   Confirm = confirm('Might Freeze And Only Show Result That Can Go For At Least An Exponen Of 2')
    if (Confirm) {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
-    let msg = true;
+    let msg = false;
     p.textContent = +inputNum.value;
     
     for (;;) {
@@ -73,37 +75,47 @@ Result2 = (oldNum, newNum, result, Confirm) => {
         alert('Dont enter 1 or 0')
         break;
      }
-
+       
+     
        if (result> +inputNum.value) {
-        exponent = 1
+        exponent = 1;
+        oldNum++; 
+        result = oldNum;
+        newNum = oldNum;
+        console.log(result);
         
-        oldNum++ 
-        result = oldNum
-        newNum = oldNum
-        console.log(result)
+        
         
     };
-       resultText.innerHTML += `
-         <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
-       `;
 
-       if (result === +inputNum.value) {
+    if (result === +inputNum.value) {
+        if (msg === true) {
+            resultText.innerHTML += `<p class='resultP'>${inputNum.value}^${1} = ${inputNum.value} </p>
+            ` 
+        }
         resultText.innerHTML += `<p class='exclamir'> This is the answer!! </p>` ;
         break;
        }
     
+    else if (oldNum * oldNum> +inputNum.value) {
+        msg = true;
+        continue;
+       };
+       
+       resultText.innerHTML += `
+         <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
+       `;
+       
     };
-    clear()
-}
+    
+};
 };
     
 
 
 clear = () => {
     result = 0;
-    resultNum.value = 0;
-    oldNum = 0;
-    newNum = 0;
+    resultNum.value ++;
     exponent = 1;
 };
 
