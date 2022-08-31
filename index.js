@@ -4,7 +4,6 @@ let btn = document.querySelectorAll('.result');
 let resultText = document.querySelector('.resultDiv');
 let btn2 = document.querySelector('.clearResult');
 let exponent = 1;
-let p = document.querySelector('.resultP');
 btn.forEach(function(btns) {
     btns.addEventListener('click', (ID) => {
      let idSet = ID.currentTarget.dataset.id
@@ -24,7 +23,7 @@ btn.forEach(function(btns) {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
     let msg = true;
-    p.textContent = +inputNum.value;
+    resultText.innerHTML = `<p class='resultP'>${+inputNum.value} <p/>`;
     for (;;) {
        exponent ++ 
        result = newNum * oldNum;
@@ -64,8 +63,7 @@ Result2 = (oldNum, newNum, result, Confirm) => {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
     let msg = false;
-    let msg2 = true;
-    p.textContent = +inputNum.value;
+    resultText.innerHTML = `<p class='resultP'>${+inputNum.value} <p/>`;
     
     for (;;) {
        exponent ++ 
@@ -122,7 +120,7 @@ clear = () => {
 
 btn2.addEventListener('click', () => {
     resultText.innerHTML = `
-    <p class="resultP">00</p>
+    <p class="resultP"></p>
     `
 });
 
