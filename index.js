@@ -84,37 +84,30 @@ Result2 = (oldNum, newNum, result, Confirm) => {
         result = oldNum;
         newNum = oldNum;
         console.log(result);
-        
-        
-        
+          
     };
-
-    if (result === +inputNum.value) {
-        if (msg === true) {
-            resultText.innerHTML += `<p class='resultP'>${inputNum.value}^${1} = ${inputNum.value} </p>
-            ` 
-        }
-        resultText.innerHTML += `<p class='exclamir'> This is the answer!! </p>` ;
-        break;
-       }
     
-    else if (oldNum * oldNum> +inputNum.value) {
-        msg = true;
-        if (msg2) {
-        resultText.innerHTML += `
-         <p class='resultP'> ${oldNum}^${1}  = ${oldNum}</p>
-       `;
-        msg2 = false; 
-    }
-
-        continue;
-       };
-       
        resultText.innerHTML += `
          <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
        `;
+
+       if (oldNum * oldNum> +inputNum.value) {
+        msg = true;
+        resultText.innerHTML += `
+         <p class='resultP'>${inputNum.value}^${1} = ${inputNum.value} </p>
+         <p class='exclamir'> This is the answer!! </p>
+       `;
+
+        break;
+       };
+       if (result === +inputNum.value) {
+    
+        resultText.innerHTML += `<p class='exclamir'> This is the answer!! </p>` ;
+        break;
+       }
        
     };
+    
     
 };
 };
