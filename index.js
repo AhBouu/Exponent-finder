@@ -13,17 +13,17 @@ btn.forEach(function(btns) {
         }
         else if (idSet == 2) {
             Result2()
-        }
-    })
+        };
+    });
 
-}) 
+}) ;
 
 
  Result1  = (oldNum, newNum, result) => {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
     let msg = true;
-    resultText.innerHTML = `<p class='resultP'>${+inputNum.value} <p/>`;
+    resultText.innerHTML += `<p class='resultP'>${+inputNum.value} <p/>`;
     for (;;) {
        exponent ++ 
        result = newNum * oldNum;
@@ -32,7 +32,7 @@ btn.forEach(function(btns) {
        if (+resultNum.value === 1 ) {
         alert('Dont enter 1 or 0')
         break;
-     }
+     };
 
        
        resultText.innerHTML += `
@@ -63,7 +63,7 @@ Result2 = (oldNum, newNum, result, Confirm) => {
     oldNum = +resultNum.value;
     newNum = +resultNum.value;
     let msg = false;
-    resultText.innerHTML = `<p class='resultP'>${+inputNum.value} <p/>`;
+    resultText.innerHTML += `<p class='resultP'>${+inputNum.value} <p/>`;
     
     for (;;) {
        exponent ++ 
