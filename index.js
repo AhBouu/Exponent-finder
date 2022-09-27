@@ -7,8 +7,6 @@ let exponent = 1;
 btn.forEach(function(btns) {
     btns.addEventListener('click', (ID) => {
     
-        resultNum.value = +resultNum.value ?? 2;
-    
         let idSet = ID.currentTarget.dataset.id
      
         if (idSet == 1) {
