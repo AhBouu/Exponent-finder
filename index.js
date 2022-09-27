@@ -6,9 +6,7 @@ let btn2 = document.querySelector('.clearResult');
 let exponent = 1;
 btn.forEach(function(btns) {
     btns.addEventListener('click', (ID) => {
-    
-        let idSet = ID.currentTarget.dataset.id
-     
+        let idSet = ID.currentTarget.dataset.id;
         if (idSet == 1) {
             Result1()
         }
@@ -73,7 +71,7 @@ Result2 = (oldNum, newNum, result, Confirm) => {
        if (+resultNum.value <= 1) {
         alert('Dont enter 1 or 0')
         break;
-     }
+     };
        
      
        if (result> +inputNum.value) {
