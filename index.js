@@ -6,7 +6,10 @@ let btn2 = document.querySelector('.clearResult');
 let exponent = 1;
 btn.forEach(function(btns) {
     btns.addEventListener('click', (ID) => {
-     let idSet = ID.currentTarget.dataset.id
+    
+        resultNum.value = +resultNum.value ?? 2;
+    
+        let idSet = ID.currentTarget.dataset.id
      
         if (idSet == 1) {
             Result1()
@@ -29,15 +32,10 @@ btn.forEach(function(btns) {
        result = newNum * oldNum;
        newNum = result;
        
-       if (+resultNum.value === 1 ) {
+       if (+resultNum.value <= 1 ) {
         alert('Dont enter 1 or 0')
         break;
      };
-
-       
-       resultText.innerHTML += `
-         <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
-       `;
 
        if (result> +inputNum.value) {
         if (msg) {
@@ -47,10 +45,14 @@ btn.forEach(function(btns) {
         break;
     };
 
+    resultText.innerHTML += `
+    <p class='resultP'> ${oldNum}^${exponent}  = ${result}</p>
+  `;
+
        if (result === +inputNum.value) {
         resultText.innerHTML += `<p class='exclamir'> This is the answer!! </p>` ;
         msg = false
-       }
+       };
     
     };
     clear()
@@ -70,7 +72,7 @@ Result2 = (oldNum, newNum, result, Confirm) => {
        result = newNum * oldNum;
        newNum = result;
        
-       if (+resultNum.value === 1 ) {
+       if (+resultNum.value <= 1) {
         alert('Dont enter 1 or 0')
         break;
      }
